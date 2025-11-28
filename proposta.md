@@ -942,21 +942,80 @@ Este estudo adota o nível de significância α = 0,05, conforme prática comum 
 
 ## 8.1 Objetos de Estudo
 
-Os objetos de estudo deste experimento incluem as imagens de pastagens capturadas por drones, previamente rotuladas por especialistas, e os modelos de Machine Learning aplicados sobre esse conjunto. As predições geradas pelos modelos serão utilizadas para comparação de desempenho.
+Os objetos de estudo deste experimento são as imagens aéreas de pastagens capturadas por drones, previamente rotuladas quanto à presença ou ausência de diferentes tipos de anomalias, e os modelos de Machine Learning aplicados sobre esse conjunto de dados. A comparação entre as predições geradas por cada modelo permitirá avaliar sua eficácia, eficiência e robustez diante do problema de detecção automática de anomalias em pastagens.
 
 ## 8.2 Sujeitos / Participantes
 
-Este experimento não envolve sujeitos humanos diretos. A participação humana se limita ao pesquisador, responsável pela execução técnica, e aos especialistas agrônomos que contribuíram com a rotulação prévia das imagens.
+O experimento não envolve participantes humanos como sujeitos experimentais. A intervenção humana limita-se ao pesquisador, responsável pela execução técnica, e aos especialistas agrônomos que atuaram no processo de rotulação das imagens. Não há interação direta com usuários finais durante a execução deste estudo, o que reduz riscos éticos e simplifica o escopo da pesquisa.
 
-## 8.3 Variáveis Independentes
+---
 
-A variável independente principal é a arquitetura do modelo de Machine Learning. Cada arquitetura — ResNet, MobileNet, EfficientNet, U-Net e YOLO — representa um nível distinto dessa variável, possibilitando uma comparação objetiva entre metodologias diferentes.
+## 8.3 Variáveis Independentes, Dependentes, de Controle e de Confusão
 
-## 8.4 Tratamentos
+Nesta seção, são descritas as variáveis consideradas no experimento. A variável independente principal é a arquitetura do modelo de Machine Learning. As variáveis dependentes representam as métricas de desempenho avaliadas. As variáveis de controle são fatores mantidos constantes para garantir validade interna. Por fim, as variáveis de confusão são fatores externos que podem influenciar os resultados e devem ser monitorados.
 
-Cada arquitetura corresponde a um tratamento experimental distinto. Os tratamentos variam em profundidade, número de parâmetros, complexidade, velocidade de inferência e natureza da tarefa predominante (classificação, detecção ou segmentação). Esses tratamentos refletem abordagens variadas para o problema de detecção de anomalias.
+A seguir, apresenta-se uma tabela consolidada com as principais variáveis e suas descrições:
+
+### **Tabela 1 – Variáveis do Experimento**
+
+| Tipo de Variável | Nome | Descrição |
+|------------------|------|-----------|
+| Independente | Arquitetura do modelo | Tipo de modelo de ML utilizado (ResNet, MobileNet, EfficientNet, U-Net, YOLO). |
+| Dependente | Acurácia | Percentual de predições corretas realizadas pelo modelo. |
+| Dependente | F1-Score | Média harmônica entre precisão e recall, medindo equilíbrio entre acertos positivos. |
+| Dependente | Precisão | Proporção de verdadeiros positivos entre todas as detecções positivas. |
+| Dependente | Recall | Capacidade de identificar corretamente todos os casos positivos. |
+| Dependente | Tempo de inferência | Tempo médio necessário para gerar uma predição para uma imagem. |
+| Dependente | Tempo de treinamento | Duração total do processo de treinamento do modelo. |
+| Dependente | Consumo de memória | Quantidade de memória utilizada durante a inferência. |
+| Dependente | FPS | Número de imagens processadas por segundo. |
+| Controle | Hardware utilizado | GPU, CPU, memória e ambiente de execução padronizado para todos os modelos. |
+| Controle | Pré-processamento das imagens | Procedimentos fixos de normalização, redimensionamento e augmentations. |
+| Controle | Divisão do dataset | Dataset idêntico para todos os modelos, usando mesma estratégia de K-fold. |
+| Controle | Parâmetros de treinamento | Número de épocas, taxa de aprendizado e batch size fixados. |
+| Confusão | Desbalanceamento de classes | Diferenças na quantidade de exemplos por classe podem influenciar o treinamento. |
+| Confusão | Iluminação e ruído | Variações naturais nas condições de captura das imagens aéreas. |
+| Confusão | Erros de rotulação | Possíveis inconsistências no processo de anotação humana. |
+| Confusão | Variação sazonal da pastagem | Diferenças naturais entre épocas do ano podem alterar padrões visuais. |
+
+---
+
+## 8.4 Fatores, Tratamentos e Combinações
+
+O principal fator manipulado no experimento é a arquitetura do modelo de Machine Learning. Cada modelo representa um tratamento distinto, com características próprias de profundidade, número de parâmetros, velocidade de inferência e tipo de tarefa predominante (classificação, detecção ou segmentação).
+
+A seguir, apresenta-se a tabela consolidada dos fatores, tratamentos e suas combinações experimentais.
+
+### **Tabela 2 – Fatores, Tratamentos e Combinações**
+
+| Fator | Tratamento | Descrição | Tipo de Tarefa |
+|-------|------------|-----------|----------------|
+| Arquitetura do Modelo | T1 – ResNet-50 | Modelo profundo com camadas residuais, alta capacidade de extração de padrões. | Classificação |
+| Arquitetura do Modelo | T2 – MobileNetV2 | Modelo leve, otimizado para dispositivos móveis, com baixo custo computacional. | Classificação |
+| Arquitetura do Modelo | T3 – EfficientNet-B0 | Modelo com equilíbrio entre profundidade e eficiência, escalonamento composto. | Classificação |
+| Arquitetura do Modelo | T4 – U-Net | Modelo especializado em segmentação semântica, útil para delinear áreas anômalas. | Segmentação |
+| Arquitetura do Modelo | T5 – YOLOv8 | Modelo de detecção rápida, capaz de localizar regiões anômalas em tempo real. | Detecção |
+
+### **Combinações experimentais**
+
+Como o experimento envolve apenas um fator (a arquitetura), as combinações correspondem diretamente aos cinco tratamentos definidos. A avaliação é realizada em cinco folds de validação cruzada, resultando em:
+
+**5 modelos × 5 folds = 25 combinações experimentais executadas.**
+
+Cada combinação consiste em:
+
+- um modelo específico;  
+- treinado em um fold específico;  
+- avaliado no conjunto complementar daquele fold;  
+- produzindo métricas completas para comparação.
+
 
 ## 8.5 Variáveis Dependentes
+
+As tabelas acima estruturam os elementos fundamentais do experimento. No entanto, sua interpretação dentro do texto é igualmente importante. A escolha da arquitetura como fator principal deve-se ao objetivo central do estudo, que é comparar a efetividade de modelos distintos no contexto de detecção de anomalias em pastagens. Cada arquitetura representa um paradigma diferente — redes profundas, modelos leves, segmentadores ou detectores — e, portanto, oferece impactos distintos sobre as métricas dependentes.
+
+As variáveis dependentes foram selecionadas para permitir uma avaliação multidimensional: não apenas se o modelo acerta, mas como ele acerta, quanto custa esse acerto em termos de tempo e recursos e quão estável é esse desempenho em múltiplas execuções. As variáveis de controle asseguram que apenas o fator arquitetural seja responsável pelas diferenças observadas, enquanto as variáveis de confusão representam ameaças que demandam monitoramento e discussão na análise final.
+
 
 As variáveis dependentes são as métricas de desempenho obtidas durante o experimento. Entre elas destacam-se acurácia, F1-score, precisão, recall, tempo de inferência, tempo total de treinamento, consumo de memória e taxa de processamento em frames por segundo. Todas essas medidas permitem avaliar de forma abrangente a performance de cada modelo.
 
