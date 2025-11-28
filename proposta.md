@@ -918,7 +918,7 @@ O experimento deve ser **reavaliado ou descontinuado** se:
    * Possibilidade de ajuste de escopo se necessário, mantendo rigor científico
 
 ---
-# 6.3 Critérios de Parada Antecipada (Pré-execução)
+### 6.3 Critérios de Parada Antecipada (Pré-execução)
 
 Antes do início da execução do experimento, alguns critérios podem justificar seu adiamento ou cancelamento. O primeiro deles refere-se à indisponibilidade de recursos computacionais essenciais, como GPU, memória ou ambiente de execução adequado. Se o pesquisador não tiver acesso mínimo aos recursos necessários, a continuidade do experimento torna-se inviável. Outro critério importante está relacionado à integridade do dataset: caso seja identificada baixa qualidade das imagens, rotulações inconsistentes, distribuição extremamente desbalanceada entre classes ou uma quantidade insuficiente de dados, o experimento deve ser interrompido até que tais problemas sejam tratados.
 
