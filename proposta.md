@@ -806,34 +806,34 @@ Para que o experimento seja considerado bem-sucedido e o TCC aprovado, os seguin
 
 **CS1 – Execução Completa do Protocolo Experimental:**
 
-* ✅ Todos os 5 modelos selecionados devem ser treinados e avaliados
-* ✅ Validação cruzada K-fold (mínimo K=5) deve ser executada para todos os modelos
-* ✅ Conjunto de teste independente deve ser utilizado para avaliação final
+*  Todos os 5 modelos selecionados devem ser treinados e avaliados
+*  Validação cruzada K-fold (mínimo K=5) deve ser executada para todos os modelos
+*  Conjunto de teste independente deve ser utilizado para avaliação final
 
 **CS2 – Coleta de Métricas Essenciais:**
 
-* ✅ Pelo menos 8 das 10 métricas distintas definidas devem ser coletadas para todos os modelos
-* ✅ Métricas de acurácia, F1-Score e tempo de inferência são **obrigatórias**
-* ✅ Dados devem ser registrados de forma reproduzível
+*  Pelo menos 8 das 10 métricas distintas definidas devem ser coletadas para todos os modelos
+*  Métricas de acurácia, F1-Score e tempo de inferência são **obrigatórias**
+*  Dados devem ser registrados de forma reproduzível
 
 **CS3 – Análise Estatística Adequada:**
 
-* ✅ Comparação estatística entre modelos deve ser realizada (testes de hipótese apropriados)
-* ✅ Intervalos de confiança ou medidas de variabilidade devem ser reportados
-* ✅ Significância estatística das diferenças deve ser verificada (p-valor < 0.05)
+*  Comparação estatística entre modelos deve ser realizada (testes de hipótese apropriados)
+*  Intervalos de confiança ou medidas de variabilidade devem ser reportados
+*  Significância estatística das diferenças deve ser verificada (p-valor < 0.05)
 
 **CS4 – Documentação Científica Completa:**
 
-* ✅ Relatório final deve seguir estrutura acadêmica padrão (IMRaD)
-* ✅ Metodologia deve estar descrita com detalhes suficientes para replicação
-* ✅ Limitações e ameaças à validade devem ser explicitamente discutidas
-* ✅ Código-fonte deve estar disponível e documentado
+*  Relatório final deve seguir estrutura acadêmica padrão (IMRaD)
+*  Metodologia deve estar descrita com detalhes suficientes para replicação
+*  Limitações e ameaças à validade devem ser explicitamente discutidas
+*  Código-fonte deve estar disponível e documentado
 
 **CS5 – Conclusões Baseadas em Evidências:**
 
-* ✅ Pelo menos 3 das 5 questões de pesquisa por objetivo devem ser respondidas com dados
-* ✅ Recomendações devem estar claramente justificadas pelos resultados
-* ✅ Deve haver identificação clara de qual(is) modelo(s) apresenta(m) melhor desempenho em cada aspecto avaliado
+*  Pelo menos 3 das 5 questões de pesquisa por objetivo devem ser respondidas com dados
+*  Recomendações devem estar claramente justificadas pelos resultados
+*  Deve haver identificação clara de qual(is) modelo(s) apresenta(m) melhor desempenho em cada aspecto avaliado
 
 ---
 
@@ -843,28 +843,28 @@ Para que o experimento seja considerado de **alta qualidade**, é desejável que
 
 **CS6 – Resultados Estatisticamente Significativos:**
 
-* 🎯 Diferenças entre modelos devem ser estatisticamente significativas (não apenas numéricas)
-* 🎯 Pelo menos um modelo deve demonstrar desempenho claramente superior em acurácia (diferença > 5%)
+*  Diferenças entre modelos devem ser estatisticamente significativas (não apenas numéricas)
+*  Pelo menos um modelo deve demonstrar desempenho claramente superior em acurácia (diferença > 5%)
 
 **CS7 – Análise de Robustez Bem-Sucedida:**
 
-* 🎯 Variação de desempenho entre condições adversas deve ser < 15% para pelo menos um modelo
-* 🎯 Pelo menos 2 modelos devem demonstrar robustez adequada (desvio padrão baixo na validação cruzada)
+*  Variação de desempenho entre condições adversas deve ser < 15% para pelo menos um modelo
+*  Pelo menos 2 modelos devem demonstrar robustez adequada (desvio padrão baixo na validação cruzada)
 
 **CS8 – Viabilidade Prática Demonstrada:**
 
-* 🎯 Pelo menos 2 modelos devem atender requisitos de processamento em tempo real (> 10 FPS)
-* 🎯 Pelo menos 1 modelo deve ser viável para implementação embarcada (< 100MB, < 1GB RAM)
+*  Pelo menos 2 modelos devem atender requisitos de processamento em tempo real (> 10 FPS)
+*  Pelo menos 1 modelo deve ser viável para implementação embarcada (< 100MB, < 1GB RAM)
 
 **CS9 – Contribuição Científica Relevante:**
 
-* 🎯 Resultados devem possibilitar submissão a conferência ou periódico científico
-* 🎯 Insights gerados devem ser úteis para desenvolvedores de soluções AgTech
+*  Resultados devem possibilitar submissão a conferência ou periódico científico
+*  Insights gerados devem ser úteis para desenvolvedores de soluções AgTech
 
 **CS10 – Código e Dados Compartilháveis:**
 
-* 🎯 Código deve estar em repositório público (GitHub) sob licença aberta
-* 🎯 Dataset (ou amostra representativa) deve ser disponibilizado se possível
+*  Código deve estar em repositório público (GitHub) sob licença aberta
+*  Dataset (ou amostra representativa) deve ser disponibilizado se possível
 
 ---
 
@@ -874,30 +874,30 @@ O experimento deve ser **reavaliado ou descontinuado** se:
 
 **NG1 – Problemas Críticos de Dados:**
 
-* ❌ Dataset apresenta problemas graves de qualidade que invalidam resultados (descoberto após análise inicial)
-* ❌ Rotulações são inconsistentes (Kappa inter-anotadores < 0.5)
-* ❌ Tamanho do dataset é insuficiente para validação estatística (< 500 imagens úteis)
+*  Dataset apresenta problemas graves de qualidade que invalidam resultados (descoberto após análise inicial)
+*  Rotulações são inconsistentes (Kappa inter-anotadores < 0.5)
+*  Tamanho do dataset é insuficiente para validação estatística (< 500 imagens úteis)
 
 **NG2 – Inviabilidade Técnica:**
 
-* ❌ Impossibilidade de treinar os modelos devido a limitações computacionais insuperáveis
-* ❌ Frameworks de ML apresentam bugs críticos que impedem implementação
+*  Impossibilidade de treinar os modelos devido a limitações computacionais insuperáveis
+*  Frameworks de ML apresentam bugs críticos que impedem implementação
 
 **NG3 – Falta de Significância:**
 
-* ❌ Todos os modelos apresentam desempenho equivalente a baseline trivial (acurácia < 60%)
-* ❌ Resultados não apresentam qualquer diferença estatisticamente significativa entre modelos
-* ❌ Experimento não responde a nenhuma das questões de pesquisa formuladas
+*  Todos os modelos apresentam desempenho equivalente a baseline trivial (acurácia < 60%)
+*  Resultados não apresentam qualquer diferença estatisticamente significativa entre modelos
+*  Experimento não responde a nenhuma das questões de pesquisa formuladas
 
 **NG4 – Problemas de Cronograma Irrecuperáveis:**
 
-* ❌ Atraso > 4 semanas no cronograma sem possibilidade de recuperação
-* ❌ Impossibilidade de conclusão dentro do prazo acadêmico institucional
+*  Atraso > 4 semanas no cronograma sem possibilidade de recuperação
+*  Impossibilidade de conclusão dentro do prazo acadêmico institucional
 
 **NG5 – Questões Éticas ou Legais:**
 
-* ❌ Identificação de problemas éticos não previstos (privacidade, uso de dados)
-* ❌ Restrições legais impedem uso do dataset ou publicação de resultados
+*  Identificação de problemas éticos não previstos (privacidade, uso de dados)
+*  Restrições legais impedem uso do dataset ou publicação de resultados
 
 ---
 
@@ -918,4 +918,71 @@ O experimento deve ser **reavaliado ou descontinuado** se:
    * Possibilidade de ajuste de escopo se necessário, mantendo rigor científico
 
 ---
+# 6.3 Critérios de Parada Antecipada (Pré-execução)
+
+Antes do início da execução do experimento, alguns critérios podem justificar seu adiamento ou cancelamento. O primeiro deles refere-se à indisponibilidade de recursos computacionais essenciais, como GPU, memória ou ambiente de execução adequado. Se o pesquisador não tiver acesso mínimo aos recursos necessários, a continuidade do experimento torna-se inviável. Outro critério importante está relacionado à integridade do dataset: caso seja identificada baixa qualidade das imagens, rotulações inconsistentes, distribuição extremamente desbalanceada entre classes ou uma quantidade insuficiente de dados, o experimento deve ser interrompido até que tais problemas sejam tratados.
+
+Também deve ser considerado o aspecto ético. Se houver qualquer dúvida sobre a necessidade de aprovação em comitê de ética, ou se algum impedimento legal impedir o uso do dataset, a execução deve ser suspensa. Além disso, mudanças no contexto acadêmico — como alterações no escopo do TCC, no cronograma institucional ou na orientação — podem demandar replanejamento antes do início. Por fim, se testes preliminares demonstrarem que um ou mais modelos não conseguem ser treinados de maneira estável ou dentro do tempo disponível, o experimento deve ser adiado para ajustes ou redefinição metodológica.
+
+# 7. Modelo Conceitual e Hipóteses
+
+## 7.1 Modelo Conceitual do Experimento
+
+O modelo conceitual adotado neste trabalho considera que diferentes arquiteturas de Machine Learning influenciam diretamente o desempenho na detecção de anomalias em pastagens. Modelos mais profundos tendem a apresentar maior capacidade de extração de características, o que pode resultar em maior acurácia e robustez, ainda que com maior demanda computacional. Em contrapartida, modelos mais leves normalmente produzem inferências mais rápidas, porém com menor precisão. Assim, parte-se da premissa de que a escolha da arquitetura impacta tanto a qualidade das predições quanto a viabilidade prática do uso em cenários reais. A relação entre modelo, desempenho e custo computacional constitui o núcleo conceitual deste estudo.
+
+## 7.2 Hipóteses Formais (H0 e H1)
+
+As hipóteses experimentais foram estabelecidas com base no modelo conceitual. A primeira refere-se à acurácia: a hipótese nula estabelece que não há diferença significativa entre os modelos, enquanto a hipótese alternativa assume que ao menos um deles apresenta desempenho superior. Em relação ao F1-score, a hipótese nula também pressupõe igualdade entre os modelos, mentre a alternativa indica diferença significativa. Para o tempo de inferência, presume-se inicialmente que não há variação relevante entre os modelos, mas a hipótese alternativa sugere que modelos mais leves apresentam desempenho significativamente mais rápido. Quanto à robustez, a hipótese nula assume que todos os modelos possuem variabilidade semelhante em condições adversas, enquanto a hipótese alternativa sugere que pelo menos um deles é mais estável. Finalmente, em relação à eficiência custo-benefício, a hipótese alternativa pressupõe a superioridade de algum modelo em termos de equilíbrio entre desempenho e consumo de recursos.
+
+## 7.3 Nível de Significância e Considerações de Poder
+
+Este estudo adota o nível de significância α = 0,05, conforme prática comum em experimentação científica. Espera-se um poder estatístico mínimo de 80%, o que requer um número suficientemente grande de imagens no conjunto experimental. A validação cruzada contribui para aumentar a confiabilidade dos resultados e diminuir o impacto de partições específicas do dataset. Caso seja identificado desbalanceamento entre classes ou alta variabilidade nas métricas, técnicas auxiliares como reamostragem e análise estratificada poderão ser empregadas.
+
+# 8. Variáveis, Fatores, Tratamentos e Objetos de Estudo
+
+## 8.1 Objetos de Estudo
+
+Os objetos de estudo deste experimento incluem as imagens de pastagens capturadas por drones, previamente rotuladas por especialistas, e os modelos de Machine Learning aplicados sobre esse conjunto. As predições geradas pelos modelos serão utilizadas para comparação de desempenho.
+
+## 8.2 Sujeitos / Participantes
+
+Este experimento não envolve sujeitos humanos diretos. A participação humana se limita ao pesquisador, responsável pela execução técnica, e aos especialistas agrônomos que contribuíram com a rotulação prévia das imagens.
+
+## 8.3 Variáveis Independentes
+
+A variável independente principal é a arquitetura do modelo de Machine Learning. Cada arquitetura — ResNet, MobileNet, EfficientNet, U-Net e YOLO — representa um nível distinto dessa variável, possibilitando uma comparação objetiva entre metodologias diferentes.
+
+## 8.4 Tratamentos
+
+Cada arquitetura corresponde a um tratamento experimental distinto. Os tratamentos variam em profundidade, número de parâmetros, complexidade, velocidade de inferência e natureza da tarefa predominante (classificação, detecção ou segmentação). Esses tratamentos refletem abordagens variadas para o problema de detecção de anomalias.
+
+## 8.5 Variáveis Dependentes
+
+As variáveis dependentes são as métricas de desempenho obtidas durante o experimento. Entre elas destacam-se acurácia, F1-score, precisão, recall, tempo de inferência, tempo total de treinamento, consumo de memória e taxa de processamento em frames por segundo. Todas essas medidas permitem avaliar de forma abrangente a performance de cada modelo.
+
+## 8.6 Variáveis de Controle
+
+Diversos fatores serão mantidos fixos para assegurar validade interna, incluindo hardware utilizado, ambiente de execução, pré-processamento das imagens, técnica de data augmentation, divisão do dataset e parâmetros de treinamento. O uso de um conjunto de dados comum a todos os modelos garante condições equivalentes de avaliação.
+
+## 8.7 Variáveis de Confusão
+
+Alguns fatores podem influenciar os resultados e serão cuidadosamente monitorados, como desbalanceamento entre classes, diferenças de iluminação, ruídos naturais introduzidos pela captura aérea, variações sazonais e eventuais erros de rotulação humana. Esses fatores serão discutidos tanto na análise quanto nas ameaças à validade.
+
+# 9. Desenho Experimental
+
+## 9.1 Tipo de Desenho Experimental
+
+O estudo utilizará um desenho completamente randomizado com validação cruzada K-fold (K = 5). Esse método é adequado a experimentos computacionais, permitindo comparar diretamente diferentes tratamentos sob condições equivalentes e reduzindo vieses de amostragem.
+
+## 9.2 Randomização e Alocação
+
+A randomização será aplicada na divisão estratificada do dataset, garantindo que cada fold mantenha proporções semelhantes entre as classes. A ordem das imagens durante o treinamento será embaralhada automaticamente, e a ordem de execução dos modelos poderá ser alternada para reduzir interferências externas, como variações temporais de processamento da GPU.
+
+## 9.3 Balanceamento e Contrabalanço
+
+O balanceamento entre as classes será realizado por meio da estratificação do dataset. Para evitar efeitos de ordem, serão aplicadas técnicas de contrabalanço, como embaralhamento das sequências de imagens em cada época de treinamento e uso uniforme de data augmentation entre todos os modelos. Tais práticas asseguram igualdade de condições entre os tratamentos.
+
+## 9.4 Número de Grupos e Sessões
+
+O experimento contará com cinco grupos principais, cada um correspondente a um dos modelos avaliados. Cada grupo será submetido a cinco execuções distintas, uma para cada fold da validação cruzada, totalizando vinte e cinco sessões experimentais. Esse número é suficiente para estimar a variabilidade e garantir rigor estatístico nas comparações.
 
