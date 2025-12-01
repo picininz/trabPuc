@@ -1045,3 +1045,59 @@ O balanceamento entre as classes será realizado por meio da estratificação do
 
 O experimento contará com cinco grupos principais, cada um correspondente a um dos modelos avaliados. Cada grupo será submetido a cinco execuções distintas, uma para cada fold da validação cruzada, totalizando vinte e cinco sessões experimentais. Esse número é suficiente para estimar a variabilidade e garantir rigor estatístico nas comparações.
 
+# 10. População, Sujeitos e Amostragem
+
+## 10.1 População-alvo
+A população-alvo deste experimento corresponde ao conjunto de modelos de Machine Learning aplicáveis ao problema de detecção automática de anomalias em pastagens utilizando imagens aéreas capturadas por drones. Embora o estudo não envolva participantes humanos, considera-se que a “população real” representada é composta por arquiteturas modernas de visão computacional — como CNNs profundas, modelos leves e arquiteturas híbridas — que potencialmente poderiam ser utilizadas em sistemas reais de monitoramento agropecuário. Assim, o experimento busca representar o comportamento esperado dessas arquiteturas diante de um dataset realista de pastagens brasileiras.
+
+## 10.2 Critérios de inclusão de sujeitos
+Os “sujeitos” do experimento são os modelos selecionados. Para serem incluídos, precisam atender a critérios mínimos: possuir implementação pública estável; ser compatíveis com frameworks amplamente utilizados (PyTorch ou TensorFlow); permitir ajustes para classificação, detecção ou segmentação de imagens; serem citados na literatura científica como métodos consolidados; e serem executáveis no hardware disponível. Além disso, cada modelo deve ser tecnicamente adequado ao problema e representar uma abordagem distinta para garantir diversidade metodológica no estudo.
+
+## 10.3 Critérios de exclusão de sujeitos
+Modelos proprietários ou que exigem licenças pagas são excluídos. Arquiteturas experimentais sem documentação adequada ou com comportamento imprevisível também não são consideradas. Modelos muito pesados, que excedam a capacidade computacional disponível, são automaticamente descartados. Métodos não relacionados ao processamento de imagens, como modelos textuais ou redes especializadas em áudio, também são excluídos por não atenderem às necessidades da tarefa.
+
+## 10.4 Tamanho da amostra planejado (por grupo)
+A amostra é definida pelos modelos e pelas execuções realizadas. Cada arquitetura será avaliada utilizando validação cruzada K-fold (K = 5), o que resulta em cinco execuções por modelo. Assim, cada grupo possui cinco observações independentes, totalizando 25 execuções experimentais. Esse tamanho de amostra é suficiente para estimar variações de desempenho e suportar a aplicação dos testes estatísticos definidos previamente.
+
+## 10.5 Método de seleção / recrutamento
+A seleção dos modelos segue uma estratégia de amostragem intencional, considerando relevância científica, maturidade tecnológica, disponibilidade de implementações confiáveis e alinhamento com o objetivo da pesquisa. Assim, os modelos foram “recrutados” com base em sua representatividade dentro do domínio de visão computacional aplicada à agricultura. O processo considera tanto desempenho teórico quanto viabilidade de execução no ambiente experimental.
+
+## 10.6 Treinamento e preparação dos sujeitos
+Cada modelo receberá preparação uniforme, incluindo carregamento de pesos pré-treinados, normalização das imagens, ajustes das camadas finais e definição de hiperparâmetros padronizados. O objetivo é garantir equidade entre os tratamentos. Guias de configuração, scripts de automação e instruções técnicas serão utilizados para assegurar consistência e reduzir vieses decorrentes de configurações distintas ou inadequadas.
+
+---
+
+# 11. Instrumentação e Protocolo Operacional
+
+## 11.1 Instrumentos de coleta (questionários, logs, planilhas, etc.)
+A coleta de dados será realizada de forma automatizada. Os modelos gerarão logs contendo métricas de treinamento e validação, registrados em arquivos de texto ou JSON. Scripts específicos computarão tempo de inferência, consumo de memória e demais métricas de interesse. Planilhas no formato CSV consolidarão os resultados de cada fold, permitindo importação posterior em ferramentas de análise estatística. Ferramentas como TensorBoard poderão ser utilizadas para visualização dinâmica dos gráficos de desempenho durante o processo.
+
+## 11.2 Materiais de suporte (instruções, guias)
+O experimento contará com um conjunto de materiais de suporte, incluindo um guia detalhado de execução, instruções para configuração do ambiente virtual, documentação da estrutura dos scripts e uma descrição completa dos parâmetros utilizados. Esses materiais garantem reprodutibilidade e servem como referência para execução consistente do pipeline experimental. Slide decks poderão ser usados para apresentação do progresso ao orientador e para organizar revisões periódicas.
+
+## 11.3 Procedimento experimental (protocolo – visão passo a passo)
+O protocolo inicia-se com a preparação do ambiente, instalação das dependências e validação das versões das bibliotecas. Em seguida, o dataset é carregado e dividido em cinco folds estratificados. Cada modelo é configurado com parâmetros previamente definidos e submetido ao treinamento no primeiro fold. Após o treinamento, o modelo é avaliado no conjunto correspondente, e todas as métricas são registradas.
+
+Este processo se repete para todos os folds e para todos os modelos, respeitando a mesma estrutura de execução. Finalizadas as execuções, os resultados são consolidados em planilhas para inspeção inicial. Por fim, realiza-se a análise estatística, geração de gráficos, interpretação dos resultados e documentação das conclusões.
+
+## 11.4 Plano de piloto (se haverá piloto, escopo e critérios de ajuste)
+Um piloto será realizado utilizando apenas uma pequena fração do dataset e um modelo leve (MobileNetV2). O objetivo é validar o funcionamento do pipeline e a compatibilidade das bibliotecas. Caso sejam identificados problemas como falhas de execução, incompatibilidade de versões ou tempos excessivos de processamento, ajustes serão feitos antes da execução completa. O protocolo só será iniciado integralmente após o piloto demonstrar estabilidade e reprodutibilidade.
+
+---
+
+# 12. Plano de Análise de Dados (Pré-execução)
+
+## 12.1 Estratégia geral de análise
+A análise será conduzida de forma sistemática, observando tanto métricas de desempenho quanto métricas de eficiência computacional. Para cada modelo, serão calculadas médias e desvios-padrão das métricas ao longo dos folds, permitindo identificar padrões e tendências. Gráficos comparativos facilitarão a visualização das diferenças entre os modelos. Os resultados serão utilizados diretamente para responder cada questão de pesquisa, garantindo alinhamento entre coleta, análise e objetivos do estudo.
+
+## 12.2 Métodos estatísticos planejados
+A análise estatística incluirá testes de hipótese adequados para medidas repetidas, como ANOVA de medidas repetidas ou, se necessário, a versão não paramétrica (teste de Friedman). Também poderão ser aplicados testes post-hoc, como Tukey ou Nemenyi, caso diferenças significativas sejam identificadas. Testes de normalidade serão realizados previamente para orientar a escolha dos métodos. Adicionalmente, intervalos de confiança serão calculados para fornecer maior robustez interpretativa.
+
+## 12.3 Tratamento de dados faltantes e outliers
+Dados faltantes decorrentes de falhas de execução serão registrados, mas não serão interpolados. Caso a ausência comprometa alguma análise estatística, a execução correspondente poderá ser repetida. Valores considerados outliers serão investigados individualmente; se forem resultado de erros técnicos, serão descartados. Caso representem variabilidade natural dos modelos, serão mantidos, desde que não comprometam a consistência das conclusões.
+
+## 12.4 Plano de análise para dados qualitativos (se houver)
+Embora predominem dados quantitativos, algumas observações qualitativas poderão ser analisadas, especialmente no que diz respeito aos padrões de erro, comportamentos inesperados dos modelos e dificuldades identificadas durante o treinamento. A análise qualitativa será conduzida por meio de categorização simples, permitindo identificar classes mais problemáticas ou limitações específicas de cada arquitetura. Essas informações complementam os resultados numéricos e enriquecem a discussão final.
+
+
+
