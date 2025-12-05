@@ -7,6 +7,8 @@
 
 ## 1. Identificação Básica
 
+Esta sessão fornece os elementos essenciais de identificação do experimento, permitindo que o documento seja rastreado, versionado e corretamente associado ao projeto ao qual pertence. Aqui são apresentados o título, o código oficial, o histórico de revisões, as datas relevantes e os responsáveis diretos, garantindo clareza administrativa e facilitando futuras consultas, auditorias e atualizações.
+
 ### 1.1 Título do Experimento
 
 **Avaliação Comparativa da Efetividade de Modelos de Machine Learning para Detecção de Anomalias em Imagens de Pastagens**
@@ -52,6 +54,7 @@ O estudo enquadra-se em:
 
 ---
 # 2. Contexto e Problema
+Esta sessão apresenta o pano de fundo que motiva a realização do experimento, descrevendo o problema central, o ambiente organizacional, os estudos anteriores e a fundamentação teórica necessária. Seu objetivo é contextualizar por que o experimento é relevante, qual lacuna pretende preencher e quais evidências sustentam sua formulação.
 
 ## 2.1 Descrição do Problema / Oportunidade
 
@@ -71,6 +74,7 @@ Machine Learning e Deep Learning fornecem fundamentos como aprendizagem supervis
 
 
 ## 3. Objetivos e Questões (Goal / Question / Metric)
+Esta sessão estabelece o propósito do experimento e detalha os objetivos que orientam sua execução. A partir deles são formuladas as questões que o estudo deve responder e definidas as métricas necessárias à avaliação, seguindo o método GQM para garantir rastreabilidade entre metas, perguntas e medidas.
 
 ### 3.1 Objetivo Geral (Goal Template)
 
@@ -186,6 +190,7 @@ Caracterizar os tipos de erros cometidos por cada modelo (falsos positivos, fals
 ---
 
 ## 4. Escopo e Contexto do Experimento
+Esta sessão caracteriza os limites do estudo, definindo o que está incluído ou excluído no seu escopo, o contexto em que será executado e as condições práticas que influenciam sua condução. Premissas, restrições e limitações são explicitadas para assegurar clareza e alinhamento sobre o horizonte realista do experimento.
 
 ### 4.1 Escopo Funcional / de Processo (Incluído e Excluído)
 
@@ -224,6 +229,7 @@ As limitações previstas incluem a possibilidade de resultados com validade ext
 ---
 
 ## 5. Stakeholders e Impacto Esperado
+Esta sessão identifica as partes interessadas e analisa como elas podem ser afetadas pelo experimento. Também descreve suas expectativas e os impactos previstos no processo e no produto, oferecendo visibilidade sobre os interesses envolvidos e o valor potencial que o estudo pode gerar.
 
 ### 5.1 Stakeholders Principais
 
@@ -265,6 +271,7 @@ Durante a execução, o estudo pode gerar competências importantes para o pesqu
 ---
 
 ## 6. Riscos de Alto Nível, Premissas e Critérios de Sucesso
+Esta sessão apresenta os riscos mais importantes que podem comprometer o experimento, bem como os critérios que definem seu sucesso ou inviabilidade. Aqui também são descritas as premissas essenciais para execução e as condições que determinam se o estudo deve avançar ou ser interrompido.
 
 ### 6.1 Riscos de Alto Nível (Negócio, Técnicos, etc.)
 
@@ -317,6 +324,7 @@ Antes do início da execução do experimento, alguns critérios podem justifica
 Também deve ser considerado o aspecto ético. Se houver qualquer dúvida sobre a necessidade de aprovação em comitê de ética, ou se algum impedimento legal impedir o uso do dataset, a execução deve ser suspensa. Além disso, mudanças no contexto acadêmico — como alterações no escopo do TCC, no cronograma institucional ou na orientação — podem demandar replanejamento antes do início. Por fim, se testes preliminares demonstrarem que um ou mais modelos não conseguem ser treinados de maneira estável ou dentro do tempo disponível, o experimento deve ser adiado para ajustes ou redefinição metodológica.
 
 # 7. Modelo Conceitual e Hipóteses
+Esta sessão organiza a base lógica do experimento por meio do modelo conceitual e das hipóteses formais. Ela descreve as relações esperadas entre fatores e respostas, além de definir hipóteses nulas e alternativas com o rigor necessário para suportar testes estatísticos válidos.
 
 ## 7.1 Modelo Conceitual do Experimento
 
@@ -331,6 +339,7 @@ As hipóteses experimentais foram estabelecidas com base no modelo conceitual. A
 Este estudo adota o nível de significância α = 0,05, conforme prática comum em experimentação científica. Espera-se um poder estatístico mínimo de 80%, o que requer um número suficientemente grande de imagens no conjunto experimental. A validação cruzada contribui para aumentar a confiabilidade dos resultados e diminuir o impacto de partições específicas do dataset. Caso seja identificado desbalanceamento entre classes ou alta variabilidade nas métricas, técnicas auxiliares como reamostragem e análise estratificada poderão ser empregadas.
 
 # 8. Variáveis, Fatores, Tratamentos e Objetos de Estudo
+Esta sessão detalha os elementos que compõem o desenho estatístico do experimento, apresentando objetos analisados, participantes envolvidos, variáveis de interesse e condições experimentais. É aqui que se definem de forma precisa os fatores manipulados, as respostas observadas e os possíveis elementos de controle.
 
 ## 8.1 Objetos de Estudo
 
@@ -420,6 +429,7 @@ Diversos fatores serão mantidos fixos para assegurar validade interna, incluind
 Alguns fatores podem influenciar os resultados e serão cuidadosamente monitorados, como desbalanceamento entre classes, diferenças de iluminação, ruídos naturais introduzidos pela captura aérea, variações sazonais e eventuais erros de rotulação humana. Esses fatores serão discutidos tanto na análise quanto nas ameaças à validade.
 
 # 9. Desenho Experimental
+Esta sessão descreve o formato metodológico adotado para conduzir o experimento. Ela especifica o tipo de desenho, como a randomização será executada, os mecanismos de balanceamento e o número de grupos e sessões necessárias para garantir validade e precisão nos resultados.
 
 ## 9.1 Tipo de Desenho Experimental
 
@@ -438,6 +448,7 @@ O balanceamento entre as classes será realizado por meio da estratificação do
 O experimento contará com cinco grupos principais, cada um correspondente a um dos modelos avaliados. Cada grupo será submetido a cinco execuções distintas, uma para cada fold da validação cruzada, totalizando vinte e cinco sessões experimentais. Esse número é suficiente para estimar a variabilidade e garantir rigor estatístico nas comparações.
 
 # 10. População, Sujeitos e Amostragem
+Esta sessão caracteriza a população que se deseja representar e define os critérios para seleção dos participantes. Também apresenta o tamanho da amostra, o método de recrutamento e o treinamento necessário, assegurando que os sujeitos sejam adequados e comparáveis para os objetivos do experimento.
 
 ## 10.1 População-alvo
 A população-alvo deste experimento corresponde ao conjunto de modelos de Machine Learning aplicáveis ao problema de detecção automática de anomalias em pastagens utilizando imagens aéreas capturadas por drones. Embora o estudo não envolva participantes humanos, considera-se que a “população real” representada é composta por arquiteturas modernas de visão computacional — como CNNs profundas, modelos leves e arquiteturas híbridas — que potencialmente poderiam ser utilizadas em sistemas reais de monitoramento agropecuário. Assim, o experimento busca representar o comportamento esperado dessas arquiteturas diante de um dataset realista de pastagens brasileiras.
@@ -460,6 +471,7 @@ Cada modelo receberá preparação uniforme, incluindo carregamento de pesos pr�
 ---
 
 # 11. Instrumentação e Protocolo Operacional
+Esta sessão fornece todos os componentes práticos necessários para a coleta de dados e execução do estudo. Ela descreve os instrumentos utilizados, os materiais de apoio, o protocolo passo a passo e o plano de piloto, garantindo que a operação seja padronizada, reproduzível e organizada.
 
 ## 11.1 Instrumentos de coleta (questionários, logs, planilhas, etc.)
 A coleta de dados será realizada de forma automatizada. Os modelos gerarão logs contendo métricas de treinamento e validação, registrados em arquivos de texto ou JSON. Scripts específicos computarão tempo de inferência, consumo de memória e demais métricas de interesse. Planilhas no formato CSV consolidarão os resultados de cada fold, permitindo importação posterior em ferramentas de análise estatística. Ferramentas como TensorBoard poderão ser utilizadas para visualização dinâmica dos gráficos de desempenho durante o processo.
@@ -478,6 +490,7 @@ Um piloto será realizado utilizando apenas uma pequena fração do dataset e um
 ---
 
 # 12. Plano de Análise de Dados (Pré-execução)
+Esta sessão estabelece como os dados serão analisados antes mesmo da condução do experimento, definindo a estratégia geral de análise, os métodos estatísticos previstos, o tratamento de ausências e valores extremos e as abordagens para dados qualitativos, garantindo rigor e evitando vieses pós-hoc.
 
 ## 12.1 Estratégia geral de análise
 A análise será conduzida de forma sistemática, observando tanto métricas de desempenho quanto métricas de eficiência computacional. Para cada modelo, serão calculadas médias e desvios-padrão das métricas ao longo dos folds, permitindo identificar padrões e tendências. Gráficos comparativos facilitarão a visualização das diferenças entre os modelos. Os resultados serão utilizados diretamente para responder cada questão de pesquisa, garantindo alinhamento entre coleta, análise e objetivos do estudo.
@@ -492,6 +505,7 @@ Dados faltantes decorrentes de falhas de execução serão registrados, mas não
 Embora predominem dados quantitativos, algumas observações qualitativas poderão ser analisadas, especialmente no que diz respeito aos padrões de erro, comportamentos inesperados dos modelos e dificuldades identificadas durante o treinamento. A análise qualitativa será conduzida por meio de categorização simples, permitindo identificar classes mais problemáticas ou limitações específicas de cada arquitetura. Essas informações complementam os resultados numéricos e enriquecem a discussão final.
 
 ## 13. Avaliação de validade (ameaças e mitigação)
+Esta sessão examina as diversas ameaças à validade do experimento — conclusão, interna, de constructo e externa — e descreve as estratégias planejadas para mitigá-las. A sessão busca assegurar que os resultados sejam sólidos, interpretáveis e generalizáveis nos limites estabelecidos.
 
 ### 13.1 Validade de conclusão
 As principais ameaças envolvem baixo poder estatístico, violação de suposições dos testes e erros de medida decorrentes de coleta inadequada. Esses fatores podem comprometer a robustez das conclusões sobre o desempenho comparativo dos modelos.  
@@ -516,6 +530,7 @@ Essas ações reforçam a confiabilidade das conclusões e deixam claros os limi
 ---
 
 ## 14. Ética, privacidade e conformidade
+Esta sessão aborda os aspectos éticos e legais envolvidos no experimento, tratando de consentimento, privacidade, proteção de dados e aprovações institucionais. Ela garante que a execução respeite critérios éticos, normativos e de conformidade aplicáveis ao estudo.
 
 ### 14.1 Questões éticas
 O estudo não envolve participantes humanos, mas requer atenção ao uso de especialistas na rotulação e ao tratamento de imagens que possam conter informações sensíveis.  
@@ -536,6 +551,7 @@ Caso existam dados sensíveis ou intenção de divulgação pública, o jurídic
 ---
 
 ## 15. Recursos, infraestrutura e orçamento
+Esta sessão apresenta os recursos humanos, técnicos e materiais necessários para viabilizar o experimento, juntamente com estimativas de custo. Seu objetivo é assegurar que a execução seja suportada por uma infraestrutura adequada e por uma previsão realista de investimentos.
 
 ### 15.1 Recursos humanos e papéis
 O pesquisador realiza a execução técnica e análise; o orientador atua como aprovador metodológico; especialistas contribuem com validação de rótulos.  
@@ -556,6 +572,7 @@ O financiamento pode ser pessoal ou institucional, mantendo o projeto economicam
 ---
 
 ## 16. Cronograma, marcos e riscos operacionais
+Esta sessão organiza o tempo e as dependências do experimento, detalhando marcos, atividades prévias, riscos operacionais e planos de contingência. Ela oferece uma visão temporal clara que orienta a preparação até o início da execução.
 
 ### 16.1 Macrocronograma
 O cronograma inclui finalização do plano, piloto, execução dos experimentos, análise estatística e consolidação dos resultados.  
@@ -572,6 +589,7 @@ As contingências incluem checkpoints frequentes, alternância de plataformas e 
 ---
 
 ## 17. Governança do experimento
+Esta sessão define a estrutura de governança que guiará o experimento, especificando papéis, responsabilidades e ritos de acompanhamento. Também apresenta o processo para controle de mudanças no plano, garantindo ordem e transparência.
 
 ### 17.1 Papéis e responsabilidades formais
 A governança define o orientador como aprovador final, o pesquisador como executor principal e os especialistas como revisores técnicos.  
@@ -588,6 +606,7 @@ Isso garante rastreabilidade e mantém integridade do experimento.
 ---
 
 ## 18. Documentação e reprodutibilidade
+Esta sessão assegura que o experimento seja devidamente documentado e reproduzível. Ela descreve repositórios, convenções de nomeação, templates e o empacotamento necessário para futuras replicações ou auditorias do estudo.
 
 ### 18.1 Repositórios e convenções de nomeação
 Scripts, dados e relatórios serão organizados em repositórios com convenções claras de pastas e nomes, reforçando clareza e navegação.  
@@ -604,6 +623,7 @@ Dessa forma, a reprodução do estudo demanda mínima adaptação externa.
 ---
 
 ## 19. Plano de comunicação
+Esta sessão delineia como as informações sobre o experimento serão comunicadas às partes interessadas, definindo públicos, mensagens-chave, canais, frequência e pontos obrigatórios de comunicação. O objetivo é prevenir ruídos e manter alinhamento contínuo.
 
 ### 19.1 Públicos e mensagens-chave pré-execução
 O público inclui orientador, especialistas e coordenação, que receberão informações sobre escopo, datas e requisitos do experimento.  
@@ -620,6 +640,7 @@ Esses pontos garantem que todos os envolvidos estejam atualizados e sincronizado
 ---
 
 ## 20. Critérios de prontidão (Definition of Ready)
+Esta sessão determina os itens que devem estar concluídos, aprovados e verificados antes do início da execução, além de especificar quem concede a aprovação final. Ela funciona como um checkpoint que valida se o experimento está realmente pronto para iniciar.
 
 ### 20.1 Checklist de prontidão
 Antes da execução devem estar concluídos: validação do plano, dataset verificado, piloto bem-sucedido, recursos técnicos disponíveis e conformidade ética assegurada.  
