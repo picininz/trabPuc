@@ -1099,5 +1099,144 @@ Dados faltantes decorrentes de falhas de execução serão registrados, mas não
 ## 12.4 Plano de análise para dados qualitativos (se houver)
 Embora predominem dados quantitativos, algumas observações qualitativas poderão ser analisadas, especialmente no que diz respeito aos padrões de erro, comportamentos inesperados dos modelos e dificuldades identificadas durante o treinamento. A análise qualitativa será conduzida por meio de categorização simples, permitindo identificar classes mais problemáticas ou limitações específicas de cada arquitetura. Essas informações complementam os resultados numéricos e enriquecem a discussão final.
 
+## 13. Avaliação de validade (ameaças e mitigação)
+
+### 13.1 Validade de conclusão
+As principais ameaças envolvem baixo poder estatístico, violação de suposições dos testes e erros de medida decorrentes de coleta inadequada. Esses fatores podem comprometer a robustez das conclusões sobre o desempenho comparativo dos modelos.  
+Para mitigar, o estudo adota K-fold adequado, testes de normalidade com uso de métodos não paramétricos quando necessário e padronização dos scripts de coleta de métricas, reduzindo inconsistências.
+
+### 13.2 Validade interna
+Há risco de efeitos observados serem influenciados por variações externas, como ordem de execução, carga da GPU ou diferenças de pré-processamento. Além disso, viés de seleção pode surgir se a divisão dos folds não preservar a distribuição das classes.  
+A mitigação ocorre com padronização do pipeline, seeds fixas, alternância na ordem de execução, estratificação dos folds e registro detalhado de metadados de execução.
+
+### 13.3 Validade de constructo
+Ameaças surgem quando as métricas não representam plenamente o conceito de “qualidade de detecção” ou quando há ambiguidade de rotulação, distorcendo interpretações.  
+Para contornar, são utilizadas métricas complementares, validação das rotulações por especialistas e diretrizes claras para anotação das classes, reduzindo ambiguidades.
+
+### 13.4 Validade externa
+A generalização pode ser limitada por características específicas do dataset, como bioma, resolução e condições de captura, o que restringe a aplicabilidade dos resultados a outros cenários.  
+A mitigação inclui documentar o domínio, testar pequenas variações de contexto e recomendar validações futuras com novos ambientes e sensores.
+
+### 13.5 Resumo das ameaças e mitigação
+As ameaças mais críticas envolvem baixo poder estatístico, erros de rotulação, variações operacionais e limitações de generalização. Elas são mitigadas com K-fold consistente, revisão de rotulações, padronização do ambiente e documentação explícita das condições do experimento.  
+Essas ações reforçam a confiabilidade das conclusões e deixam claros os limites do estudo para replicações futuras.
+
+---
+
+## 14. Ética, privacidade e conformidade
+
+### 14.1 Questões éticas
+O estudo não envolve participantes humanos, mas requer atenção ao uso de especialistas na rotulação e ao tratamento de imagens que possam conter informações sensíveis.  
+A mitigação consiste em transparência sobre objetivos, ausência de pressão sobre colaboradores e anonimização de quaisquer dados que identifiquem propriedades ou locais.
+
+### 14.2 Consentimento informado
+Os especialistas envolvidos receberão explicações sobre objetivos, riscos e uso dos dados, formalizando consentimento eletrônico simples.  
+Esse registro garante conformidade institucional e oferece rastreabilidade para revisões e auditorias.
+
+### 14.3 Privacidade e proteção de dados
+Embora haja mínima coleta de dados pessoais, metadados sensíveis serão removidos ou pseudoanonimizados. Repositórios privados e controle de acesso serão utilizados para proteger o material.  
+Os dados serão mantidos somente pelo período necessário à reprodutibilidade acadêmica.
+
+### 14.4 Aprovações necessárias
+Apesar de provavelmente dispensar aprovação de comitê de ética, recomenda-se confirmação institucional.  
+Caso existam dados sensíveis ou intenção de divulgação pública, o jurídico ou DPO deverá ser consultado previamente.
+
+---
+
+## 15. Recursos, infraestrutura e orçamento
+
+### 15.1 Recursos humanos e papéis
+O pesquisador realiza a execução técnica e análise; o orientador atua como aprovador metodológico; especialistas contribuem com validação de rótulos.  
+Essa distribuição cobre execução, supervisão e avaliação técnica.
+
+### 15.2 Infraestrutura técnica necessária
+O experimento requer ambiente Python com bibliotecas de visão computacional, GPU local ou na nuvem, repositório GitHub e ferramentas para versionamento e logs.  
+Essa infraestrutura assegura rastreabilidade, desempenho e reprodutibilidade.
+
+### 15.3 Materiais e insumos
+São necessários o dataset rotulado, dependências computacionais, dispositivos de armazenamento e eventuais licenças auxiliares.  
+Todos os materiais serão organizados para facilitar rastreamento e auditoria.
+
+### 15.4 Orçamento e custos
+Os custos envolvem horas de trabalho, possível uso de GPU paga e compensação para especialistas, quando aplicável.  
+O financiamento pode ser pessoal ou institucional, mantendo o projeto economicamente viável.
+
+---
+
+## 16. Cronograma, marcos e riscos operacionais
+
+### 16.1 Macrocronograma
+O cronograma inclui finalização do plano, piloto, execução dos experimentos, análise estatística e consolidação dos resultados.  
+Cada fase depende da validação da anterior, garantindo fluxo progressivo e controlado.
+
+### 16.2 Dependências entre atividades
+O treinamento completo depende do sucesso do piloto, e a publicação de resultados depende de validações ética e técnica.  
+Essas dependências reduzem riscos de retrabalho e falhas estruturais.
+
+### 16.3 Riscos operacionais
+Os principais riscos são indisponibilidade de GPU, interrupções em serviços de nuvem e falhas no treinamento.  
+As contingências incluem checkpoints frequentes, alternância de plataformas e ajustes de hiperparâmetros mais leves.
+
+---
+
+## 17. Governança do experimento
+
+### 17.1 Papéis e responsabilidades formais
+A governança define o orientador como aprovador final, o pesquisador como executor principal e os especialistas como revisores técnicos.  
+Esse arranjo delimita autoridade e reduz ambiguidades de responsabilidade.
+
+### 17.2 Ritos de acompanhamento pré-execução
+Serão realizadas reuniões periódicas com o orientador e checkpoints formais antes do início da execução plena.  
+Esses ritos permitem ajustes antecipados e validação contínua do plano.
+
+### 17.3 Processo de controle de mudanças
+Alterações serão registradas via issues e commits, com aprovação explícita do orientador para mudanças metodológicas.  
+Isso garante rastreabilidade e mantém integridade do experimento.
+
+---
+
+## 18. Documentação e reprodutibilidade
+
+### 18.1 Repositórios e convenções de nomeação
+Scripts, dados e relatórios serão organizados em repositórios com convenções claras de pastas e nomes, reforçando clareza e navegação.  
+Esse padrão contribui para padronização e facilidade de manutenção.
+
+### 18.2 Templates e artefatos padrão
+Serão utilizados templates para relatórios, scripts, arquivos de configuração e checklists, garantindo consistência documental.  
+Esses artefatos evitam divergências de estilo e reduzem erros.
+
+### 18.3 Plano de empacotamento para replicação futura
+A replicação futura será facilitada com disponibilização de scripts, seeds, instruções de ambiente e documentação completa do processo.  
+Dessa forma, a reprodução do estudo demanda mínima adaptação externa.
+
+---
+
+## 19. Plano de comunicação
+
+### 19.1 Públicos e mensagens-chave pré-execução
+O público inclui orientador, especialistas e coordenação, que receberão informações sobre escopo, datas e requisitos do experimento.  
+Essa comunicação inicial alinha expectativas e reduz riscos de desencontro.
+
+### 19.2 Canais e frequência de comunicação
+Serão utilizadas reuniões periódicas, e-mails e comunicação assíncrona por plataformas como Slack ou Teams.  
+Cada canal atende necessidades diferentes de urgência e formalidade.
+
+### 19.3 Pontos de comunicação obrigatórios
+Aprovação do plano, conclusão do piloto, alterações relevantes e entrega final exigem comunicações formais.  
+Esses pontos garantem que todos os envolvidos estejam atualizados e sincronizados.
+
+---
+
+## 20. Critérios de prontidão (Definition of Ready)
+
+### 20.1 Checklist de prontidão
+Antes da execução devem estar concluídos: validação do plano, dataset verificado, piloto bem-sucedido, recursos técnicos disponíveis e conformidade ética assegurada.  
+Esse checklist evita início prematuro e reduz riscos metodológicos.
+
+### 20.2 Aprovações finais para iniciar a operação
+O orientador fornecerá o aceite formal, e a equipe garantirá a disponibilidade técnica completa.  
+Somente após essas confirmações o experimento poderá iniciar sua execução integral.
+
+
 
 
